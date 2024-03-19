@@ -32,7 +32,7 @@ const Signup = () => {
         value={password} 
         class="w-60 p-1 rounded-md shadow-sm shadow-blue-700"
         /><br/>
-        <button disabled={isLoading} class="mt-5 bg-orange-500 p-1 rounded-md shadow-md shadow-black">Sign up</button>
+        <button class="mt-5 bg-orange-500 p-1 rounded-md shadow-md shadow-black">Sign up</button>
 
         {error && <div class=" bg-red-300 mt-5 p-1 rounded-md text-red-700">{error}</div>}
         <p class="pt-4 pb-4">Already have an account! <a class="text-red-500" href="/login">Login</a></p>
@@ -42,3 +42,5 @@ const Signup = () => {
 }
  
 export default Signup;
+
+// disabled={isLoading} 
