@@ -11,7 +11,10 @@ const cors=require('cors')
 const taskRoutes=require('./Routes/taskRoutes')
 const userRoutes=require('./Routes/user')
 //middleware
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
 app.use(express.json())
 //route
 app.use('/api/task',taskRoutes)
