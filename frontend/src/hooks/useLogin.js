@@ -12,6 +12,7 @@ export const useLogin=()=>{
         setError(null)
         
         const response=await fetch( SERVER_URL+'/api/user/login',{
+            mode: 'no-cors',
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
