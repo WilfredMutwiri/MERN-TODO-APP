@@ -14,7 +14,7 @@ const userRoutes=require('./Routes/user')
 app.use(express.json())
 // app.use(cors())
 app.use(cors({
-    origin: 'https://todo-app-ashen-tau.vercel.app'
+    origin:'https://todo-app-ashen-tau.vercel.app/'
   }));
 //route
 app.use('api/task',taskRoutes)
