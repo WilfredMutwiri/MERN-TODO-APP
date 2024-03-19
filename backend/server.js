@@ -7,14 +7,14 @@ const mongoose=require('mongoose')
 //create app
 const app=express()
 const cors=require('cors')
-const {handleCors, loginUser, signupUser} = require('./controllers/userController');
+// const {handleCors, loginUser, signupUser} = require('./controllers/userController');
 //require task routes
 const taskRoutes=require('./Routes/taskRoutes')
 const userRoutes=require('./Routes/user')
 app.use(express.json())
 //middleware
-// app.use(cors())
-app.use(handleCors);
+app.use(cors())
+// app.use(handleCors);
 // routes
 app.use('/api/task',taskRoutes)
 app.use('/api/user',userRoutes)

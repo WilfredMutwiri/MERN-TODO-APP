@@ -7,12 +7,12 @@ const createToken=(_id)=>{
 };
 
 // Middleware function to handle CORS headers
-const handleCors = (req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://todo-app-ashen-tau.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-};
+// const handleCors = (req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'https://todo-app-ashen-tau.vercel.app');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//     next();
+// };
 
 //login controller
 const loginUser=async(req,res)=>{
@@ -40,5 +40,4 @@ const signupUser=async(req,res)=>{
 module.exports={
     loginUser,
     signupUser,
-    handleCors
 }
