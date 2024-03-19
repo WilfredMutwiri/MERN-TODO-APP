@@ -14,8 +14,8 @@ const userRoutes=require('./Routes/user')
 app.use(express.json())
 app.use(cors())
 //route
-app.use('/api/task',taskRoutes)
-app.use('/api/user',userRoutes)
+app.use('api/task',taskRoutes)
+app.use('api/user',userRoutes)
 //connect to database
 mongoose.connect(process.env.MONGO_URI)
     .then(

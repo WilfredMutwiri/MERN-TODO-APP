@@ -11,10 +11,11 @@ export const useLogin=()=>{
         setIsLoading(true)
         setError(null)
         
-        const response=await fetch( SERVER_URL+'/api/user/login',{
+        const response=await fetch( SERVER_URL+'api/user/login',{
             method:'POST',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                "Access-Control-Allow-Origin": "*",
             },
             body:JSON.stringify({email,password})
         })
