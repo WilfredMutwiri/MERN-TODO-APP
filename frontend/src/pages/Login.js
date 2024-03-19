@@ -42,3 +42,5 @@ const Login = () => {
 }
  
 export default Login;
+
+// disabled={isLoading} 

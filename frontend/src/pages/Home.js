@@ -56,6 +56,7 @@ const Home = () => {
         })
         const json=await response.json()
         console.log("Task created successfully!");
+        // console.log(json)
         if(!response.ok){
             setError(json.error)
         }else
@@ -66,6 +67,7 @@ const Home = () => {
             dispatch({type:'CREATE_TASK',payload:json})
         }catch(error){
             setError("An error occured while adding the tasks")
+            // console.log(error);
         }
         if(response.ok){
             setTaskInfo('');
