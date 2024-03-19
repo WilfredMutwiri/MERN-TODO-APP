@@ -18,7 +18,7 @@ const Home = () => {
       const {user}=useAuthContext()
       useEffect(()=>{
           const fetchTasks=async()=>{
-              const response=await fetch('/api/task',{
+              const response=await fetch(SERVER_URL+'/api/task',{
                 headers:{
                     'Authorization':`Bearer ${user.token}`
                 }
