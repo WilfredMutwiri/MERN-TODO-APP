@@ -11,7 +11,7 @@ export const useLogin=()=>{
         setIsLoading(true)
         setError(null)
         
-        const response=await fetch( SERVER_URL+'api/user/login',{
+        const response=await fetch( SERVER_URL+'/api/user/login',{
             // mode: 'no-cors',
             method:'POST',
             headers:{

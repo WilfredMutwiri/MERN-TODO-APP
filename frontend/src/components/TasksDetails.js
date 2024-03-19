@@ -10,7 +10,7 @@ const TaskDetails = ({task}) => {
             return
         }
         try {
-            const response=await fetch(SERVER_URL+'api/task/'+task._id,{
+            const response=await fetch(SERVER_URL+'/api/task/'+task._id,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${user.token}`,

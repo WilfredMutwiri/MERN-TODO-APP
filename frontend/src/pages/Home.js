@@ -44,7 +44,7 @@ const Home = () => {
             return
         }
         const task={taskInfo,description,duration}
-        const response=await fetch(SERVER_URL+'api/task',{
+        const response=await fetch(SERVER_URL+'/api/task',{
             method:"POST",
             body:JSON.stringify(task),
             headers:{

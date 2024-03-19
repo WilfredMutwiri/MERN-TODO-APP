@@ -11,14 +11,11 @@ const cors=require('cors')
 const taskRoutes=require('./Routes/taskRoutes')
 const userRoutes=require('./Routes/user')
 //middleware
-// app.use(cors())
-app.use(cors({
-    origin:'https://todo-app-ashen-tau.vercel.app/'
-  }));
+app.use(cors())
 app.use(express.json())
 //route
-app.use('api/task',taskRoutes)
-app.use('api/user',userRoutes)
+app.use('/api/task',taskRoutes)
+app.use('/api/user',userRoutes)
 //connect to database
 mongoose.connect(process.env.MONGO_URI)
     .then(
