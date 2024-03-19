@@ -15,7 +15,7 @@ const Signup = () => {
     }
     return (
         <div>
-        <p class={`${load ? 'hidden':'block' } text-center pt-10 text-green-600`}>Please wait...this may take some time..</p>
+        <p class={`${load ? 'hidden':'block' } text-center pt-10 text-green-600`}>Please wait...this might take a while..</p>
         <form class="bg-gray-200 mt-14 w-72 p-5 m-auto rounded-md shadow-sm shadow-black" onSubmit={handleSubmit}>
         <h3 class="text-center text-orange-600 font-semibold">Sign Up</h3>
         <label>Email</label><br/>
