@@ -8,7 +8,6 @@ const createToken=(_id)=>{
 //login controller
 const loginUser=async(req,res)=>{
     const {email,password}=req.body
-    res.set('Access-Control-Allow-Origin', '*');
     try {
         const user=await User.login(email,password)
         const token=createToken(user._id)

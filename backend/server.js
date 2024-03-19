@@ -13,10 +13,9 @@ const userRoutes=require('./Routes/user')
 //middleware
 app.use(express.json())
 // app.use(cors())
-app.use((req, res, next) => {
-    res.header({"Access-Control-Allow-Origin": "*"});
-    next();
-  }) 
+app.use(cors({
+    origin: 'https://todo-app-ashen-tau.vercel.app'
+  }));
 //route
 app.use('api/task',taskRoutes)
 app.use('api/user',userRoutes)
