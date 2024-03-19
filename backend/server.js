@@ -10,13 +10,13 @@ const cors=require('cors')
 //require task routes
 const taskRoutes=require('./Routes/taskRoutes')
 const userRoutes=require('./Routes/user')
+app.use(express.json())
 //middleware
 app.use(cors())
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
   }) 
-app.use(express.json())
-//route
+// routes
 app.use('/api/task',taskRoutes)
 app.use('/api/user',userRoutes)
 //connect to database
