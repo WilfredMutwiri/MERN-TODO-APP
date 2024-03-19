@@ -13,7 +13,8 @@ const TaskDetails = ({task}) => {
             const response=await fetch(SERVER_URL+'api/task/'+task._id,{
                 method:'DELETE',
                 headers:{
-                    'Authorization':`Bearer ${user.token}`
+                    'Authorization':`Bearer ${user.token}`,
+                    "Access-Control-Allow-Origin": "*",
                 }
             })
             const json=await response.json()

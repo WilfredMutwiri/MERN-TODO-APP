@@ -14,7 +14,8 @@ export const useSignup=()=>{
         const response=await fetch(SERVER_URL+'api/user/signup',{
             method:'POST',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                "Access-Control-Allow-Origin": "*",
             },
             body:JSON.stringify({email,password})
         })

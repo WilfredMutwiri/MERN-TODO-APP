@@ -20,7 +20,8 @@ const Home = () => {
           const fetchTasks=async()=>{
               const response=await fetch(SERVER_URL+'/api/task',{
                 headers:{
-                    'Authorization':`Bearer ${user.token}`
+                    'Authorization':`Bearer ${user.token}`,
+                    "Access-Control-Allow-Origin": "*",
                 }
               })
               const json=await response.json()
@@ -48,7 +49,8 @@ const Home = () => {
             body:JSON.stringify(task),
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':`Bearer ${user.token}`
+                'Authorization':`Bearer ${user.token}`,
+                "Access-Control-Allow-Origin": "*",
 
             }
         })
