@@ -10,8 +10,8 @@ const Login = () => {
 
     const handleSubmit=async(e)=>{
         e.preventDefault()
-        await login(email,password)
         setload(false)
+        await login(email,password)
     }
     return (
         <div>
