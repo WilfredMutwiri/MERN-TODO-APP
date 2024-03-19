@@ -4,7 +4,16 @@ const jwt=require('jsonwebtoken')
 //create token
 const createToken=(_id)=>{
     return jwt.sign({_id},process.env.SECRET,{expiresIn:'3d'})
-}
+};
+
+// Middleware function to handle CORS headers
+const handleCors = (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://todo-app-ashen-tau.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+};
+
 //login controller
 const loginUser=async(req,res)=>{
     const {email,password}=req.body
@@ -30,5 +39,6 @@ const signupUser=async(req,res)=>{
 //export controllers
 module.exports={
     loginUser,
-    signupUser
+    signupUser,
+    handleCors
 }
