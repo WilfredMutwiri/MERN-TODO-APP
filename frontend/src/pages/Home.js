@@ -6,7 +6,7 @@ import {SERVER_URL} from '../constants/server_url'
 import { useAuthContext } from '../hooks/useAuthContext'
 let newTaskCounter=0
 const Home = () => {
-    const [newTask,setNewTask]=useState(false)
+    const [newTask,setNewTask]=useState(true)
     const [taskInfo,setTaskInfo]=useState('');
     const [description,setDescription]=useState('');
     const [duration,setDuration]=useState('');
@@ -84,9 +84,9 @@ const Home = () => {
         }
     }
     const handleNewTask=()=>{
-        setNewTask(true)
+        setNewTask(false)
         newTaskCounter++;
-        if(newTaskCounter===2){
+        if(newTaskCounter===1){
             setNewTask(false)
             newTaskCounter=0
         }
@@ -94,8 +94,8 @@ const Home = () => {
     const handleClose=()=>{
         setNewTask(true)
         newTaskCounter++;
-        if(newTaskCounter===2){
-            setNewTask(false)
+        if(newTaskCounter===1){
+            setNewTask(true)
             newTaskCounter=0
         }
     }
