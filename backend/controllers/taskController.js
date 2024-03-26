@@ -56,14 +56,15 @@ const updateTask=async(req,res)=>{
     const {id}=req.params
 
     if(!mongoose.Types.ObjectId.isValid(id)){
-        res.status(400).json({mssg:"No such task found"})
+       return res.status(400).json({mssg:"No such task found"})
     }
     const task=await Task.findOneAndUpdate({_id:id},{...req.body})
     if(!task){
-        res.status(400).json({mssg:"No task found"})
+       return res.status(400).json({mssg:"No task found"})
     }
     console.log("Task updated successfully!")
-    res.status(200).json(task)
+    console.log(task)
+    return res.status(200).json(task)
 }
 module.exports={
     createTask,

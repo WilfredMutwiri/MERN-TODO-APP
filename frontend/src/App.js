@@ -4,6 +4,7 @@ import NavBar from './components/navBar';
 import Login from './pages/Login';
 import Signup from './pages/Signup'
 import { useAuthContext } from './hooks/useAuthContext';
+import Landing from './pages/Landing';
 function App() {
   const {user}=useAuthContext()
   return (
@@ -11,13 +12,14 @@ function App() {
     <Router>
     <NavBar/>
     <Routes>
+    <Route exact path='/Landing' element={<Landing/>}/>
     <Route path='/' 
-    element={user ? <Home/> : <Navigate to="/login" />}
+    element={user ? <Home/> : <Navigate to="/Landing" />}
     />
-    <Route path='/login'
+    <Route path='/Landing/login'
     element={!user ? <Login/> :<Navigate to="/"/>}
     />
-    <Route path='/signup'
+    <Route path='/Landing/signup'
     element={!user ? <Signup/> :<Navigate to="/"/>}
     />
     </Routes>
